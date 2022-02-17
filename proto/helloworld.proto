@@ -1,9 +1,13 @@
 syntax = "proto3";
 
+option go_package = "./proto";
+
 package helloworld;
 
 service Greeter {
+  // unary call
   rpc SayHello(HelloRequest) returns (HelloReply);
+  // server streaming call
   rpc SayRepeatHello(RepeatHelloRequest) returns (stream HelloReply);
 }
 
